@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_231642562dfa3de93ad87e56101358e0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+             <div style="position: fixed; 
+                         bottom: 50px; right: 50px; width: 150px; height: 90px; 
+                         border:2px solid grey; z-index:9999; font-size:14px;
+                         background-color:white;
+                         padding: 10px;
+                         border-radius: 5px;
+                         ">
+             <p><i class="fa fa-map-marker fa-2x" style="color:blue"></i> PNW Region</p>
+             <p><i class="fa fa-map-marker fa-2x" style="color:red"></i> Custom Added</p>
+             </div>
+             
+    
+            <div class="folium-map" id="map_231642562dfa3de93ad87e56101358e0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_231642562dfa3de93ad87e56101358e0 = L.map(
+                "map_231642562dfa3de93ad87e56101358e0",
+                {
+                    center: [46.62216787040916, -120.58225671491839],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_97f6c0b51deedf414fbe7bfdc3a5406b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_97f6c0b51deedf414fbe7bfdc3a5406b.addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var marker_1ba5c827591cdd0b6b372ae37594a3de = L.marker(
+                [43.5862606000522, -119.054103200235],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_4d6fd2c6a48fb76d3a819f9dd8e0c164 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1ba5c827591cdd0b6b372ae37594a3de.setIcon(icon_4d6fd2c6a48fb76d3a819f9dd8e0c164);
+        
+    
+        var popup_928aed7a094c9c740d911345d95516ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f93eb90887c8cda3c6a685ba132fdc1 = $(`<div id="html_0f93eb90887c8cda3c6a685ba132fdc1" style="width: 100.0%; height: 100.0%;">                 <b>Burns Paiute Tribe</b><br>                 Region: Northwest<br>                 Leader: Kennedy Tracy<br>                 Title: Chairperson<br>                 Phone: (541) 573-2088<br>                 Email: tracy.kennedy@burnspaiute-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_928aed7a094c9c740d911345d95516ff.setContent(html_0f93eb90887c8cda3c6a685ba132fdc1);
+            
+        
+
+        marker_1ba5c827591cdd0b6b372ae37594a3de.bindPopup(popup_928aed7a094c9c740d911345d95516ff)
+        ;
+
+        
+    
+    
+            marker_1ba5c827591cdd0b6b372ae37594a3de.bindTooltip(
+                `<div>
+                     Burns Paiute Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_299cefbf79890c7acb5ba10ca9e2cc3d = L.marker(
+                [47.3377148197925, -116.886717899775],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_dcb91319f06aaa0d72baf0c9e5bab116 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_299cefbf79890c7acb5ba10ca9e2cc3d.setIcon(icon_dcb91319f06aaa0d72baf0c9e5bab116);
+        
+    
+        var popup_35b471284dd9eaa5216c49bb7be01e63 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec10ce73f7b5e4e489189a27b6e104a7 = $(`<div id="html_ec10ce73f7b5e4e489189a27b6e104a7" style="width: 100.0%; height: 100.0%;">                 <b>Coeur D'Alene Tribe</b><br>                 Region: Northwest<br>                 Leader: Chief Allan<br>                 Title: Chairman<br>                 Phone: (208) 686-1800<br>                 Email: chief.allan@cdatribe-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_35b471284dd9eaa5216c49bb7be01e63.setContent(html_ec10ce73f7b5e4e489189a27b6e104a7);
+            
+        
+
+        marker_299cefbf79890c7acb5ba10ca9e2cc3d.bindPopup(popup_35b471284dd9eaa5216c49bb7be01e63)
+        ;
+
+        
+    
+    
+            marker_299cefbf79890c7acb5ba10ca9e2cc3d.bindTooltip(
+                `<div>
+                     Coeur D'Alene Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d5e46d37804a4133d88d8facd89bcc9 = L.marker(
+                [47.5963367897875, -114.114447000036],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_f95d60ff6f22d951b25d1ed04c2ca3b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2d5e46d37804a4133d88d8facd89bcc9.setIcon(icon_f95d60ff6f22d951b25d1ed04c2ca3b7);
+        
+    
+        var popup_bf918b8183a733c93fe62093cb6b7c6e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d75ac0b4f9443b0c244cc1c1f3c9dab6 = $(`<div id="html_d75ac0b4f9443b0c244cc1c1f3c9dab6" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Salish and Kootenai Tribes of the Flathead Reservation</b><br>                 Region: Northwest<br>                 Leader: Michael Dolson<br>                 Title: Chairman<br>                 Phone: (406) 675-2700<br>                 Email: Michael.dolson@cskt.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_bf918b8183a733c93fe62093cb6b7c6e.setContent(html_d75ac0b4f9443b0c244cc1c1f3c9dab6);
+            
+        
+
+        marker_2d5e46d37804a4133d88d8facd89bcc9.bindPopup(popup_bf918b8183a733c93fe62093cb6b7c6e)
+        ;
+
+        
+    
+    
+            marker_2d5e46d37804a4133d88d8facd89bcc9.bindTooltip(
+                `<div>
+                     Confederated Salish and Kootenai Tribes of the Flathead Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf42ecc5570785cd539c9015e3b5521a = L.marker(
+                [46.376216979694, -120.338668999818],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d95dccf4ee5494bfd5aecb71bf81874e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cf42ecc5570785cd539c9015e3b5521a.setIcon(icon_d95dccf4ee5494bfd5aecb71bf81874e);
+        
+    
+        var popup_0191ab766fc467c5f1098fc2b3146ce0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_141d6838b55e0ce2c4b7a7360e5cd123 = $(`<div id="html_141d6838b55e0ce2c4b7a7360e5cd123" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes and Bands of the Yakama Nation</b><br>                 Region: Northwest<br>                 Leader: Gerald Lewis<br>                 Title: Chairman<br>                 Phone: (509) 865-5121<br>                 Email: gerald_lewis@yakama.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_0191ab766fc467c5f1098fc2b3146ce0.setContent(html_141d6838b55e0ce2c4b7a7360e5cd123);
+            
+        
+
+        marker_cf42ecc5570785cd539c9015e3b5521a.bindPopup(popup_0191ab766fc467c5f1098fc2b3146ce0)
+        ;
+
+        
+    
+    
+            marker_cf42ecc5570785cd539c9015e3b5521a.bindTooltip(
+                `<div>
+                     Confederated Tribes and Bands of the Yakama Nation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b10c8276143eb6dd87eb1ae484bc60d = L.marker(
+                [44.7198429197131, -123.916519499867],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d52da6e3a5593f6a8031c11814208f49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9b10c8276143eb6dd87eb1ae484bc60d.setIcon(icon_d52da6e3a5593f6a8031c11814208f49);
+        
+    
+        var popup_2df43e2b3cccf00f9944dab52d428e25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f61135de436832ebc09257cb10dbc3b = $(`<div id="html_3f61135de436832ebc09257cb10dbc3b" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of Siletz Indians of Oregon</b><br>                 Region: Northwest<br>                 Leader: Delores Pigsley<br>                 Title: Chairwoman<br>                 Phone: (541) 444-2532<br>                 Email: dpigsley@msn.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_2df43e2b3cccf00f9944dab52d428e25.setContent(html_3f61135de436832ebc09257cb10dbc3b);
+            
+        
+
+        marker_9b10c8276143eb6dd87eb1ae484bc60d.bindPopup(popup_2df43e2b3cccf00f9944dab52d428e25)
+        ;
+
+        
+    
+    
+            marker_9b10c8276143eb6dd87eb1ae484bc60d.bindTooltip(
+                `<div>
+                     Confederated Tribes of Siletz Indians of Oregon
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a3915c9d45682a393de64c276128741f = L.marker(
+                [46.8150583899043, -123.172262800438],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_51ede8e359a5c32212465071d8a48d84 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a3915c9d45682a393de64c276128741f.setIcon(icon_51ede8e359a5c32212465071d8a48d84);
+        
+    
+        var popup_6d2e7895c589b6a1be26f9f5b1b8e0cf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8aed00d536ad631abe7b99835ad0b2d = $(`<div id="html_d8aed00d536ad631abe7b99835ad0b2d" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Chehalis Reservation</b><br>                 Region: Northwest<br>                 Leader: Dustin Klatush<br>                 Title: Chairman<br>                 Phone: (360) 273-5911<br>                 Email: dklatush@chehalistribe.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_6d2e7895c589b6a1be26f9f5b1b8e0cf.setContent(html_d8aed00d536ad631abe7b99835ad0b2d);
+            
+        
+
+        marker_a3915c9d45682a393de64c276128741f.bindPopup(popup_6d2e7895c589b6a1be26f9f5b1b8e0cf)
+        ;
+
+        
+    
+    
+            marker_a3915c9d45682a393de64c276128741f.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Chehalis Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_33a9be26257f8b14b814a27c38c363e7 = L.marker(
+                [48.1335638697574, -118.975557300162],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_4fcd9fe38db946ad497a8410f12ce979 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_33a9be26257f8b14b814a27c38c363e7.setIcon(icon_4fcd9fe38db946ad497a8410f12ce979);
+        
+    
+        var popup_31e31013febf3de3074b5d9e2fa71a85 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_400c886639e71256627be2eaf38fcf1d = $(`<div id="html_400c886639e71256627be2eaf38fcf1d" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Colville Reservation</b><br>                 Region: Northwest<br>                 Leader: Jarred-Michael (Jarred) Erickson<br>                 Title: Chairman<br>                 Phone: (509) 634-2200<br>                 Email: jarred.erickson.cbc@colvilletribes.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_31e31013febf3de3074b5d9e2fa71a85.setContent(html_400c886639e71256627be2eaf38fcf1d);
+            
+        
+
+        marker_33a9be26257f8b14b814a27c38c363e7.bindPopup(popup_31e31013febf3de3074b5d9e2fa71a85)
+        ;
+
+        
+    
+    
+            marker_33a9be26257f8b14b814a27c38c363e7.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Colville Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_51d49d003134afd97a549cd3e865f3e2 = L.marker(
+                [43.383286899781, -124.264683499934],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_69c5a1c634bb8f07aca034b107c21cd9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_51d49d003134afd97a549cd3e865f3e2.setIcon(icon_69c5a1c634bb8f07aca034b107c21cd9);
+        
+    
+        var popup_92230c7143161f4cca3ab185bab37f8c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cadf48adafd6e4a94d58043e45336140 = $(`<div id="html_cadf48adafd6e4a94d58043e45336140" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians</b><br>                 Region: Northwest<br>                 Leader: Brad Kneaper<br>                 Title: Chairman<br>                 Phone: (541) 888-9577<br>                 Email: brad.kneaper@ctclusi.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_92230c7143161f4cca3ab185bab37f8c.setContent(html_cadf48adafd6e4a94d58043e45336140);
+            
+        
+
+        marker_51d49d003134afd97a549cd3e865f3e2.bindPopup(popup_92230c7143161f4cca3ab185bab37f8c)
+        ;
+
+        
+    
+    
+            marker_51d49d003134afd97a549cd3e865f3e2.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ba6d010bc193f50b385b6013e445f799 = L.marker(
+                [45.0736363299445, -123.613189099599],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d5859157d2ed8932949a6a2b026c5529 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba6d010bc193f50b385b6013e445f799.setIcon(icon_d5859157d2ed8932949a6a2b026c5529);
+        
+    
+        var popup_a4164e594688cbe5cdcd7d1c8e2db7f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85e02991213d0a4dc843497ed13810e7 = $(`<div id="html_85e02991213d0a4dc843497ed13810e7" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Grand Ronde Community of Oregon</b><br>                 Region: Northwest<br>                 Leader: Cheryle Kennedy<br>                 Title: Chairwoman<br>                 Phone: (503) 879-5211<br>                 Email: cheryle.kennedy@grandronde.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_a4164e594688cbe5cdcd7d1c8e2db7f8.setContent(html_85e02991213d0a4dc843497ed13810e7);
+            
+        
+
+        marker_ba6d010bc193f50b385b6013e445f799.bindPopup(popup_a4164e594688cbe5cdcd7d1c8e2db7f8)
+        ;
+
+        
+    
+    
+            marker_ba6d010bc193f50b385b6013e445f799.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Grand Ronde Community of Oregon
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16ab144370eb4824f41a66dd36dc2c50 = L.marker(
+                [45.6654061201427, -118.685797700382],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_ffbcfd2b64790e371ccc7d20ec043753 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_16ab144370eb4824f41a66dd36dc2c50.setIcon(icon_ffbcfd2b64790e371ccc7d20ec043753);
+        
+    
+        var popup_5822def1bacbfd9fd3b2b35fb3e4b0ab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f4565f6949ba57ce332ea723a82e7c0e = $(`<div id="html_f4565f6949ba57ce332ea723a82e7c0e" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Umatilla Indian Reservation</b><br>                 Region: Northwest<br>                 Leader: Gary Burke<br>                 Title: Board of Trustees Chair<br>                 Phone: (541) 276-3165<br>                 Email: garyburke@ctuir.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_5822def1bacbfd9fd3b2b35fb3e4b0ab.setContent(html_f4565f6949ba57ce332ea723a82e7c0e);
+            
+        
+
+        marker_16ab144370eb4824f41a66dd36dc2c50.bindPopup(popup_5822def1bacbfd9fd3b2b35fb3e4b0ab)
+        ;
+
+        
+    
+    
+            marker_16ab144370eb4824f41a66dd36dc2c50.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Umatilla Indian Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9c9d07b18993992418be152a34bc4deb = L.marker(
+                [44.6228948000563, -121.427274500404],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_20b1362c0a09186d5471b8942915b633 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9c9d07b18993992418be152a34bc4deb.setIcon(icon_20b1362c0a09186d5471b8942915b633);
+        
+    
+        var popup_58dcc34b21418f491056d64c59ae4d4f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b079fdc60e05e18973a1809f0bf1a0d7 = $(`<div id="html_b079fdc60e05e18973a1809f0bf1a0d7" style="width: 100.0%; height: 100.0%;">                 <b>Confederated Tribes of the Warm Springs Reservation of Oregon</b><br>                 Region: Northwest<br>                 Leader: Jonathan Smith<br>                 Title: Chairman<br>                 Phone: (541) 553-1161<br>                 Email: jonathanwsmith@wstribes.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_58dcc34b21418f491056d64c59ae4d4f.setContent(html_b079fdc60e05e18973a1809f0bf1a0d7);
+            
+        
+
+        marker_9c9d07b18993992418be152a34bc4deb.bindPopup(popup_58dcc34b21418f491056d64c59ae4d4f)
+        ;
+
+        
+    
+    
+            marker_9c9d07b18993992418be152a34bc4deb.bindTooltip(
+                `<div>
+                     Confederated Tribes of the Warm Springs Reservation of Oregon
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3ddd2d7c2be1c3c065b1f05c53b25320 = L.marker(
+                [43.3941146100691, -124.220757099758],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_93118522c237c12bdb68c56a11a44641 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3ddd2d7c2be1c3c065b1f05c53b25320.setIcon(icon_93118522c237c12bdb68c56a11a44641);
+        
+    
+        var popup_1fecdbf7fce3acaa27ab7f5c8408163c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b964b54384c877af2ea6ebafa6db3b14 = $(`<div id="html_b964b54384c877af2ea6ebafa6db3b14" style="width: 100.0%; height: 100.0%;">                 <b>Coquille Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Brenda Meade<br>                 Title: Chairperson<br>                 Phone: (541) 756-0904<br>                 Email: brendameade@coquilletribe.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_1fecdbf7fce3acaa27ab7f5c8408163c.setContent(html_b964b54384c877af2ea6ebafa6db3b14);
+            
+        
+
+        marker_3ddd2d7c2be1c3c065b1f05c53b25320.bindPopup(popup_1fecdbf7fce3acaa27ab7f5c8408163c)
+        ;
+
+        
+    
+    
+            marker_3ddd2d7c2be1c3c065b1f05c53b25320.bindTooltip(
+                `<div>
+                     Coquille Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1c8a598e720d2413c7fe67cf0031ddda = L.marker(
+                [43.2386406002156, -123.351728100338],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_4167b93ec667f8e77ed4e7f0faf82bc2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1c8a598e720d2413c7fe67cf0031ddda.setIcon(icon_4167b93ec667f8e77ed4e7f0faf82bc2);
+        
+    
+        var popup_6aa1e52920fd8b8e9774d0d8fcf714dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d3a0d2a27df25b634a5551499a0984d = $(`<div id="html_8d3a0d2a27df25b634a5551499a0984d" style="width: 100.0%; height: 100.0%;">                 <b>Cow Creek Band of Umpqua Tribe of Indians</b><br>                 Region: Northwest<br>                 Leader: Carla Keene<br>                 Title: Chairwoman<br>                 Phone: (541) 672-9405<br>                 Email: ckeene@cowcreek-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_6aa1e52920fd8b8e9774d0d8fcf714dd.setContent(html_8d3a0d2a27df25b634a5551499a0984d);
+            
+        
+
+        marker_1c8a598e720d2413c7fe67cf0031ddda.bindPopup(popup_6aa1e52920fd8b8e9774d0d8fcf714dd)
+        ;
+
+        
+    
+    
+            marker_1c8a598e720d2413c7fe67cf0031ddda.bindTooltip(
+                `<div>
+                     Cow Creek Band of Umpqua Tribe of Indians
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cfc7983d8ce5301633a5c1afc3ee3736 = L.marker(
+                [46.1320941502613, -122.931633700276],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_ec79a7e8fac988d7d7ee7d70d07bf1eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cfc7983d8ce5301633a5c1afc3ee3736.setIcon(icon_ec79a7e8fac988d7d7ee7d70d07bf1eb);
+        
+    
+        var popup_6a99c56d9db2350ad5c7105f5d7d1687 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e4a095d2b2ec57934377e75fc4c40202 = $(`<div id="html_e4a095d2b2ec57934377e75fc4c40202" style="width: 100.0%; height: 100.0%;">                 <b>Cowlitz Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: William Iyall<br>                 Title: Chairman<br>                 Phone: (360) 577-8140<br>                 Email: biyall@tc.cowlitz.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_6a99c56d9db2350ad5c7105f5d7d1687.setContent(html_e4a095d2b2ec57934377e75fc4c40202);
+            
+        
+
+        marker_cfc7983d8ce5301633a5c1afc3ee3736.bindPopup(popup_6a99c56d9db2350ad5c7105f5d7d1687)
+        ;
+
+        
+    
+    
+            marker_cfc7983d8ce5301633a5c1afc3ee3736.bindTooltip(
+                `<div>
+                     Cowlitz Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ba414d647be157ac7669dfd7450e1417 = L.marker(
+                [47.745420100124, -124.422168100116],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_36b28c4fb4a2039d503677d4731978da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba414d647be157ac7669dfd7450e1417.setIcon(icon_36b28c4fb4a2039d503677d4731978da);
+        
+    
+        var popup_918ca2ec95e69e0394e9616a8f4ddb25 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_038f3ecacc67bfccd6604087cea0a795 = $(`<div id="html_038f3ecacc67bfccd6604087cea0a795" style="width: 100.0%; height: 100.0%;">                 <b>Hoh Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Darlene Hollum<br>                 Title: Chairwoman<br>                 Phone: (360) 374-6582<br>                 Email: darlene.hollum@hohtribe-nsn.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_918ca2ec95e69e0394e9616a8f4ddb25.setContent(html_038f3ecacc67bfccd6604087cea0a795);
+            
+        
+
+        marker_ba414d647be157ac7669dfd7450e1417.bindPopup(popup_918ca2ec95e69e0394e9616a8f4ddb25)
+        ;
+
+        
+    
+    
+            marker_ba414d647be157ac7669dfd7450e1417.bindTooltip(
+                `<div>
+                     Hoh Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f4d1a7adc056420adfbc6cb7c76cc0f3 = L.marker(
+                [48.0248694900889, -122.995908800252],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_669712a27b01e7fb9c560b64480ba3ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f4d1a7adc056420adfbc6cb7c76cc0f3.setIcon(icon_669712a27b01e7fb9c560b64480ba3ac);
+        
+    
+        var popup_27f579e772313a24776f3b3cc5df33df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e5e2765601d1f704f111a7a1fa905bb = $(`<div id="html_0e5e2765601d1f704f111a7a1fa905bb" style="width: 100.0%; height: 100.0%;">                 <b>Jamestown S'Klallam Tribe</b><br>                 Region: Northwest<br>                 Leader: W. Ron Allen<br>                 Title: Chairman<br>                 Phone: (360) 683-1109<br>                 Email: rallen@jamestowntribe.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_27f579e772313a24776f3b3cc5df33df.setContent(html_0e5e2765601d1f704f111a7a1fa905bb);
+            
+        
+
+        marker_f4d1a7adc056420adfbc6cb7c76cc0f3.bindPopup(popup_27f579e772313a24776f3b3cc5df33df)
+        ;
+
+        
+    
+    
+            marker_f4d1a7adc056420adfbc6cb7c76cc0f3.bindTooltip(
+                `<div>
+                     Jamestown S'Klallam Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fbacb38541ffe52e22bc5a98440ba122 = L.marker(
+                [48.3454785601519, -117.271778799664],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_9ec55c4528470da4d951035243b3f2de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fbacb38541ffe52e22bc5a98440ba122.setIcon(icon_9ec55c4528470da4d951035243b3f2de);
+        
+    
+        var popup_3b4af0b23701c5062b044ed08a1870b7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e098ab275508fed268a1c54a10ebfe3c = $(`<div id="html_e098ab275508fed268a1c54a10ebfe3c" style="width: 100.0%; height: 100.0%;">                 <b>Kalispel Indian Community of the Kalispel Reservation</b><br>                 Region: Northwest<br>                 Leader: Glen Nenema<br>                 Title: Chairman<br>                 Phone: (509) 445-1147<br>                 Email: gdnenema@kalispeltribe.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_3b4af0b23701c5062b044ed08a1870b7.setContent(html_e098ab275508fed268a1c54a10ebfe3c);
+            
+        
+
+        marker_fbacb38541ffe52e22bc5a98440ba122.bindPopup(popup_3b4af0b23701c5062b044ed08a1870b7)
+        ;
+
+        
+    
+    
+            marker_fbacb38541ffe52e22bc5a98440ba122.bindTooltip(
+                `<div>
+                     Kalispel Indian Community of the Kalispel Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_089dbdb773071b3f19865a1a91397871 = L.marker(
+                [42.5742530602961, -121.874413099811],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_e4d4f9896a570565c5139936d3b256f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_089dbdb773071b3f19865a1a91397871.setIcon(icon_e4d4f9896a570565c5139936d3b256f3);
+        
+    
+        var popup_fd1a17e8ec9c7d0bf8fac155bad4715a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1ca0f317ac2002fd2d95ffb6544d3496 = $(`<div id="html_1ca0f317ac2002fd2d95ffb6544d3496" style="width: 100.0%; height: 100.0%;">                 <b>Klamath Tribes</b><br>                 Region: Northwest<br>                 Leader: William Ray<br>                 Title: Chairman<br>                 Phone: (541) 783-2219<br>                 Email: wray.council@klamathtribes.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_fd1a17e8ec9c7d0bf8fac155bad4715a.setContent(html_1ca0f317ac2002fd2d95ffb6544d3496);
+            
+        
+
+        marker_089dbdb773071b3f19865a1a91397871.bindPopup(popup_fd1a17e8ec9c7d0bf8fac155bad4715a)
+        ;
+
+        
+    
+    
+            marker_089dbdb773071b3f19865a1a91397871.bindTooltip(
+                `<div>
+                     Klamath Tribes
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_842065544be770de18992cc5d8f5593e = L.marker(
+                [48.7080353599149, -116.368739700368],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_90b09bac2904307daef4d41e9a919489 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_842065544be770de18992cc5d8f5593e.setIcon(icon_90b09bac2904307daef4d41e9a919489);
+        
+    
+        var popup_1ac5ef83aac41d4bb62a6c1f05c885cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b44db16ac5eccca872c12c0f66674c0 = $(`<div id="html_3b44db16ac5eccca872c12c0f66674c0" style="width: 100.0%; height: 100.0%;">                 <b>Kootenai Tribe of Idaho</b><br>                 Region: Northwest<br>                 Leader: Jennifer Porter<br>                 Title: Chairperson<br>                 Phone: (208) 267-3519<br>                 Email: jennifer@kootenai.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_1ac5ef83aac41d4bb62a6c1f05c885cb.setContent(html_3b44db16ac5eccca872c12c0f66674c0);
+            
+        
+
+        marker_842065544be770de18992cc5d8f5593e.bindPopup(popup_1ac5ef83aac41d4bb62a6c1f05c885cb)
+        ;
+
+        
+    
+    
+            marker_842065544be770de18992cc5d8f5593e.bindTooltip(
+                `<div>
+                     Kootenai Tribe of Idaho
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4c0c959ef339f54b72dd4fcb576169de = L.marker(
+                [48.1440352001285, -123.548671500311],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_5edd298c3713b5e0a118b1d09db5c979 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4c0c959ef339f54b72dd4fcb576169de.setIcon(icon_5edd298c3713b5e0a118b1d09db5c979);
+        
+    
+        var popup_e364bb583f1ecdf966a853b666fde04e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2774cffe225543762c3fdce320252d01 = $(`<div id="html_2774cffe225543762c3fdce320252d01" style="width: 100.0%; height: 100.0%;">                 <b>Lower Elwha Tribal Community</b><br>                 Region: Northwest<br>                 Leader: Frances Charles<br>                 Title: Chairwoman<br>                 Phone: (360) 452-8471<br>                 Email: fgcharles@elwha.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_e364bb583f1ecdf966a853b666fde04e.setContent(html_2774cffe225543762c3fdce320252d01);
+            
+        
+
+        marker_4c0c959ef339f54b72dd4fcb576169de.bindPopup(popup_e364bb583f1ecdf966a853b666fde04e)
+        ;
+
+        
+    
+    
+            marker_4c0c959ef339f54b72dd4fcb576169de.bindTooltip(
+                `<div>
+                     Lower Elwha Tribal Community
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a69ebcb5712b7a6593005140f0cf316d = L.marker(
+                [48.7920178999955, -122.62615309973],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d1743285e38d50685694d7c8bc2d308f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a69ebcb5712b7a6593005140f0cf316d.setIcon(icon_d1743285e38d50685694d7c8bc2d308f);
+        
+    
+        var popup_4686294178bbe5d52776db1811421bc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b384e09aecd399f02fd0d0cc2ee985ad = $(`<div id="html_b384e09aecd399f02fd0d0cc2ee985ad" style="width: 100.0%; height: 100.0%;">                 <b>Lummi Tribe of the Lummi Reservation</b><br>                 Region: Northwest<br>                 Leader: Anthony Hillaire<br>                 Title: Chairman<br>                 Phone: (360) 312-2000<br>                 Email: anthonyh@lummi-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_4686294178bbe5d52776db1811421bc2.setContent(html_b384e09aecd399f02fd0d0cc2ee985ad);
+            
+        
+
+        marker_a69ebcb5712b7a6593005140f0cf316d.bindPopup(popup_4686294178bbe5d52776db1811421bc2)
+        ;
+
+        
+    
+    
+            marker_a69ebcb5712b7a6593005140f0cf316d.bindTooltip(
+                `<div>
+                     Lummi Tribe of the Lummi Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5534c6d8dcaa3b16906607c34af7961 = L.marker(
+                [48.3474335897923, -124.66795170014],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_aad359afa394eed7dd8b1a4ad93dee1e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c5534c6d8dcaa3b16906607c34af7961.setIcon(icon_aad359afa394eed7dd8b1a4ad93dee1e);
+        
+    
+        var popup_39eadbfa137621e7a44230e9c4a29f63 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d80387201f458d1f1ccac257e63186b2 = $(`<div id="html_d80387201f458d1f1ccac257e63186b2" style="width: 100.0%; height: 100.0%;">                 <b>Makah Indian Tribe of the Makah Indian Reservation</b><br>                 Region: Northwest<br>                 Leader: Timothy Greene<br>                 Title: Chairman<br>                 Phone: (360) 645-2201<br>                 Email: timothy.greene@makah.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_39eadbfa137621e7a44230e9c4a29f63.setContent(html_d80387201f458d1f1ccac257e63186b2);
+            
+        
+
+        marker_c5534c6d8dcaa3b16906607c34af7961.bindPopup(popup_39eadbfa137621e7a44230e9c4a29f63)
+        ;
+
+        
+    
+    
+            marker_c5534c6d8dcaa3b16906607c34af7961.bindTooltip(
+                `<div>
+                     Makah Indian Tribe of the Makah Indian Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f8f1123b5fda5108801cdf877c60e7a = L.marker(
+                [55.1261670498099, -131.573394899907],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_55fd3114bed9fbd921c85d1207cfe2c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5f8f1123b5fda5108801cdf877c60e7a.setIcon(icon_55fd3114bed9fbd921c85d1207cfe2c5);
+        
+    
+        var popup_d0be1d2dac3752cd43c243b3d2679ae6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_929f6a3ecc1ef550c3ff70e5e597ba0e = $(`<div id="html_929f6a3ecc1ef550c3ff70e5e597ba0e" style="width: 100.0%; height: 100.0%;">                 <b>Metlakatla Indian Community, Annette Island Reserve</b><br>                 Region: Northwest<br>                 Leader: Albert Smith<br>                 Title: Mayor<br>                 Phone: (907) 886-4441<br>                 Email: asmith@metlakatla.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_d0be1d2dac3752cd43c243b3d2679ae6.setContent(html_929f6a3ecc1ef550c3ff70e5e597ba0e);
+            
+        
+
+        marker_5f8f1123b5fda5108801cdf877c60e7a.bindPopup(popup_d0be1d2dac3752cd43c243b3d2679ae6)
+        ;
+
+        
+    
+    
+            marker_5f8f1123b5fda5108801cdf877c60e7a.bindTooltip(
+                `<div>
+                     Metlakatla Indian Community, Annette Island Reserve
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c800a52483707007d96172d5597d8b79 = L.marker(
+                [47.2517159998489, -122.115220399673],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_dea2a7c09ba70a59f62b049b6d5dfde0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c800a52483707007d96172d5597d8b79.setIcon(icon_dea2a7c09ba70a59f62b049b6d5dfde0);
+        
+    
+        var popup_a23dac0d0a13dca275e30349bd9411f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2ddb7a3c951332d8002067202f5d58b0 = $(`<div id="html_2ddb7a3c951332d8002067202f5d58b0" style="width: 100.0%; height: 100.0%;">                 <b>Muckleshoot Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Jaison Elkins<br>                 Title: Chairman<br>                 Phone: (253) 939-3311<br>                 Email: jaison.elkins@muckleshoot.nsn.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_a23dac0d0a13dca275e30349bd9411f6.setContent(html_2ddb7a3c951332d8002067202f5d58b0);
+            
+        
+
+        marker_c800a52483707007d96172d5597d8b79.bindPopup(popup_a23dac0d0a13dca275e30349bd9411f6)
+        ;
+
+        
+    
+    
+            marker_c800a52483707007d96172d5597d8b79.bindTooltip(
+                `<div>
+                     Muckleshoot Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b6a99c32bfea5d750bafcf1f43b6517a = L.marker(
+                [46.3999752898191, -116.804678400359],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_347b67259d7a90feed92f43dc5e05404 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b6a99c32bfea5d750bafcf1f43b6517a.setIcon(icon_347b67259d7a90feed92f43dc5e05404);
+        
+    
+        var popup_b43793804a85c261ad8dde14dec45526 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bd186775d879142cbadb270176decb7 = $(`<div id="html_9bd186775d879142cbadb270176decb7" style="width: 100.0%; height: 100.0%;">                 <b>Nez Perce Tribe</b><br>                 Region: Northwest<br>                 Leader: Shannon Wheeler<br>                 Title: Chairman<br>                 Phone: (208) 843-2253<br>                 Email: shannonw@nezperce.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_b43793804a85c261ad8dde14dec45526.setContent(html_9bd186775d879142cbadb270176decb7);
+            
+        
+
+        marker_b6a99c32bfea5d750bafcf1f43b6517a.bindPopup(popup_b43793804a85c261ad8dde14dec45526)
+        ;
+
+        
+    
+    
+            marker_b6a99c32bfea5d750bafcf1f43b6517a.bindTooltip(
+                `<div>
+                     Nez Perce Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8b1419faf70134b218efca612e31cf5 = L.marker(
+                [47.0037059997671, -122.670327999965],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_7ebb8093dba856cbbe3eefd16bc2ac62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b8b1419faf70134b218efca612e31cf5.setIcon(icon_7ebb8093dba856cbbe3eefd16bc2ac62);
+        
+    
+        var popup_ea331fda805e11897763a470481191e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e82a98833fdc54883b7ef3a93a31cf23 = $(`<div id="html_e82a98833fdc54883b7ef3a93a31cf23" style="width: 100.0%; height: 100.0%;">                 <b>Nisqually Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Ken Choke<br>                 Title: Chairman<br>                 Phone: (360) 456-5221<br>                 Email: choke.ken@nisqually-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_ea331fda805e11897763a470481191e9.setContent(html_e82a98833fdc54883b7ef3a93a31cf23);
+            
+        
+
+        marker_b8b1419faf70134b218efca612e31cf5.bindPopup(popup_ea331fda805e11897763a470481191e9)
+        ;
+
+        
+    
+    
+            marker_b8b1419faf70134b218efca612e31cf5.bindTooltip(
+                `<div>
+                     Nisqually Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3f68fdc81b68b13f6bc0b62c822b3dc8 = L.marker(
+                [48.8238123498713, -122.215869400312],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_ad4d2809152b3a37bee2f6c9d3e8d408 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3f68fdc81b68b13f6bc0b62c822b3dc8.setIcon(icon_ad4d2809152b3a37bee2f6c9d3e8d408);
+        
+    
+        var popup_d3d28f586c103ffcad493a2c0ee04d2f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e048009fbd5d265dfb0caf35a4a03751 = $(`<div id="html_e048009fbd5d265dfb0caf35a4a03751" style="width: 100.0%; height: 100.0%;">                 <b>Nooksack Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: RoseMary LaClair<br>                 Title: Chairperson<br>                 Phone: (360) 592-5176<br>                 Email: chair@nooksack-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_d3d28f586c103ffcad493a2c0ee04d2f.setContent(html_e048009fbd5d265dfb0caf35a4a03751);
+            
+        
+
+        marker_3f68fdc81b68b13f6bc0b62c822b3dc8.bindPopup(popup_d3d28f586c103ffcad493a2c0ee04d2f)
+        ;
+
+        
+    
+    
+            marker_3f68fdc81b68b13f6bc0b62c822b3dc8.bindTooltip(
+                `<div>
+                     Nooksack Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1015adcba6073ab48da7f9de66b3f3b6 = L.marker(
+                [41.2192080697869, -112.017034000424],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_83819e14453e5285cc6e25f7d3d29bbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1015adcba6073ab48da7f9de66b3f3b6.setIcon(icon_83819e14453e5285cc6e25f7d3d29bbf);
+        
+    
+        var popup_a3ffdf70eeee5c5bdb44d5791d35d0b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db740ad3fbe7faf80112663e89a255e7 = $(`<div id="html_db740ad3fbe7faf80112663e89a255e7" style="width: 100.0%; height: 100.0%;">                 <b>Northwestern Band of the Shoshone Nation</b><br>                 Region: Northwest<br>                 Leader: Dennis Alex<br>                 Title: Chairman<br>                 Phone: (435) 734-2286<br>                 Email: ggover@nwbshoshone.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_a3ffdf70eeee5c5bdb44d5791d35d0b8.setContent(html_db740ad3fbe7faf80112663e89a255e7);
+            
+        
+
+        marker_1015adcba6073ab48da7f9de66b3f3b6.bindPopup(popup_a3ffdf70eeee5c5bdb44d5791d35d0b8)
+        ;
+
+        
+    
+    
+            marker_1015adcba6073ab48da7f9de66b3f3b6.bindTooltip(
+                `<div>
+                     Northwestern Band of the Shoshone Nation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4c23ee18db2751db3b92d43bb496c26a = L.marker(
+                [47.852155400286, -122.569315300214],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_a641c0d9f8044a7495bbc01a16990c01 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4c23ee18db2751db3b92d43bb496c26a.setIcon(icon_a641c0d9f8044a7495bbc01a16990c01);
+        
+    
+        var popup_ae8e69529298fa4a89437fd396ba7f7c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79cafb817dbbbe78bc2d290fd04c9a17 = $(`<div id="html_79cafb817dbbbe78bc2d290fd04c9a17" style="width: 100.0%; height: 100.0%;">                 <b>Port Gamble S'Klallam Tribe</b><br>                 Region: Northwest<br>                 Leader: Amber Caldera<br>                 Title: Chairwoman<br>                 Phone: (360) 297-2646<br>                 Email: chairperson@pgst.nsn.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_ae8e69529298fa4a89437fd396ba7f7c.setContent(html_79cafb817dbbbe78bc2d290fd04c9a17);
+            
+        
+
+        marker_4c23ee18db2751db3b92d43bb496c26a.bindPopup(popup_ae8e69529298fa4a89437fd396ba7f7c)
+        ;
+
+        
+    
+    
+            marker_4c23ee18db2751db3b92d43bb496c26a.bindTooltip(
+                `<div>
+                     Port Gamble S'Klallam Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d41de115ec0e479d4761b0adbd4c4af5 = L.marker(
+                [47.2363190001548, -122.409560899854],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_0d722db18f3fd00803abc0b2f98ce3d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d41de115ec0e479d4761b0adbd4c4af5.setIcon(icon_0d722db18f3fd00803abc0b2f98ce3d9);
+        
+    
+        var popup_7d10866c2954c1b211c245ec6cbaf0a2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a06a01a289bf8fc8775b87c8cc43181d = $(`<div id="html_a06a01a289bf8fc8775b87c8cc43181d" style="width: 100.0%; height: 100.0%;">                 <b>Puyallup Tribe of the Puyallup Reservation</b><br>                 Region: Northwest<br>                 Leader: Bill Sterud<br>                 Title: Chairman<br>                 Phone: (253) 573-7800<br>                 Email: bill.sterud@puyalluptribe-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_7d10866c2954c1b211c245ec6cbaf0a2.setContent(html_a06a01a289bf8fc8775b87c8cc43181d);
+            
+        
+
+        marker_d41de115ec0e479d4761b0adbd4c4af5.bindPopup(popup_7d10866c2954c1b211c245ec6cbaf0a2)
+        ;
+
+        
+    
+    
+            marker_d41de115ec0e479d4761b0adbd4c4af5.bindTooltip(
+                `<div>
+                     Puyallup Tribe of the Puyallup Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c7f1d4d77f1a7095c15cd689370e3fb = L.marker(
+                [47.9096461001253, -124.636378799699],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_9174c0cf30cb6f5c011d2d41c05d4e4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6c7f1d4d77f1a7095c15cd689370e3fb.setIcon(icon_9174c0cf30cb6f5c011d2d41c05d4e4a);
+        
+    
+        var popup_7319f74da9acb096b9f4b44d3ba993d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f645a64ab03d7d4955e3e1474ae00dc8 = $(`<div id="html_f645a64ab03d7d4955e3e1474ae00dc8" style="width: 100.0%; height: 100.0%;">                 <b>Quileute Tribe of the Quileute Reservation</b><br>                 Region: Northwest<br>                 Leader: Douglas Woodruff<br>                 Title: Chairman<br>                 Phone: (360) 374-6163<br>                 Email: doug.woodruff@quileutenation.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_7319f74da9acb096b9f4b44d3ba993d5.setContent(html_f645a64ab03d7d4955e3e1474ae00dc8);
+            
+        
+
+        marker_6c7f1d4d77f1a7095c15cd689370e3fb.bindPopup(popup_7319f74da9acb096b9f4b44d3ba993d5)
+        ;
+
+        
+    
+    
+            marker_6c7f1d4d77f1a7095c15cd689370e3fb.bindTooltip(
+                `<div>
+                     Quileute Tribe of the Quileute Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a5f700f4c825a17cf586b5133413e907 = L.marker(
+                [47.3391989600924, -124.285446100298],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_0ccf6f67fccd10c2e2ce053952984706 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a5f700f4c825a17cf586b5133413e907.setIcon(icon_0ccf6f67fccd10c2e2ce053952984706);
+        
+    
+        var popup_07b79a7ebef3a20c34565bb91059e564 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d7214b9a775a28e3d1b6a38d41231c1b = $(`<div id="html_d7214b9a775a28e3d1b6a38d41231c1b" style="width: 100.0%; height: 100.0%;">                 <b>Quinault Indian Nation</b><br>                 Region: Northwest<br>                 Leader: Guy Capoeman<br>                 Title: President<br>                 Phone: (360) 276-8211<br>                 Email: guy.capoeman@quinault.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_07b79a7ebef3a20c34565bb91059e564.setContent(html_d7214b9a775a28e3d1b6a38d41231c1b);
+            
+        
+
+        marker_a5f700f4c825a17cf586b5133413e907.bindPopup(popup_07b79a7ebef3a20c34565bb91059e564)
+        ;
+
+        
+    
+    
+            marker_a5f700f4c825a17cf586b5133413e907.bindTooltip(
+                `<div>
+                     Quinault Indian Nation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b32dac45fc85a32b2bad0b677aff2bf9 = L.marker(
+                [48.4983118000973, -122.613048400009],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_77b79cf3eae63492178ead438d0d1b3e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b32dac45fc85a32b2bad0b677aff2bf9.setIcon(icon_77b79cf3eae63492178ead438d0d1b3e);
+        
+    
+        var popup_1f51a1f30bed9ff7acf40e0a3d7b517b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a5adaf25371f6746511e2e3a785eff27 = $(`<div id="html_a5adaf25371f6746511e2e3a785eff27" style="width: 100.0%; height: 100.0%;">                 <b>Samish Indian Nation</b><br>                 Region: Northwest<br>                 Leader: Tom Wooten<br>                 Title: Chairman<br>                 Phone: (360) 293-6404<br>                 Email: tomwooten@samishtribe.nsn.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_1f51a1f30bed9ff7acf40e0a3d7b517b.setContent(html_a5adaf25371f6746511e2e3a785eff27);
+            
+        
+
+        marker_b32dac45fc85a32b2bad0b677aff2bf9.bindPopup(popup_1f51a1f30bed9ff7acf40e0a3d7b517b)
+        ;
+
+        
+    
+    
+            marker_b32dac45fc85a32b2bad0b677aff2bf9.bindTooltip(
+                `<div>
+                     Samish Indian Nation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d441848b63cda7cdbb39600700b45e11 = L.marker(
+                [48.3219782997522, -121.552464599646],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_2b571aed4f4901b5f953eef33140e6b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d441848b63cda7cdbb39600700b45e11.setIcon(icon_2b571aed4f4901b5f953eef33140e6b2);
+        
+    
+        var popup_e6a3a028b43dad63ab5b183a6a9aea5e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_131cc8d16b36e0938611da02bb17e159 = $(`<div id="html_131cc8d16b36e0938611da02bb17e159" style="width: 100.0%; height: 100.0%;">                 <b>Sauk-Suiattle Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Nino Maltos<br>                 Title: Chairman<br>                 Phone: (360) 436-0131<br>                 Email: chairman@sauk-suiattle.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_e6a3a028b43dad63ab5b183a6a9aea5e.setContent(html_131cc8d16b36e0938611da02bb17e159);
+            
+        
+
+        marker_d441848b63cda7cdbb39600700b45e11.bindPopup(popup_e6a3a028b43dad63ab5b183a6a9aea5e)
+        ;
+
+        
+    
+    
+            marker_d441848b63cda7cdbb39600700b45e11.bindTooltip(
+                `<div>
+                     Sauk-Suiattle Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3303bc8264efdfdc914a046e2e0b21ad = L.marker(
+                [46.7209631797667, -124.015032599612],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d2765e2e191cc31266ded7f0fcaa5c9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3303bc8264efdfdc914a046e2e0b21ad.setIcon(icon_d2765e2e191cc31266ded7f0fcaa5c9f);
+        
+    
+        var popup_27327ecf7a72e2754de93bdae2b91c72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_272d1694f53aa4040de2bca57665a73e = $(`<div id="html_272d1694f53aa4040de2bca57665a73e" style="width: 100.0%; height: 100.0%;">                 <b>Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation</b><br>                 Region: Northwest<br>                 Leader: Quintin Swanson<br>                 Title: Chairman<br>                 Phone: (360) 267-6766<br>                 Email: qswanson@shoalwaterbay-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_27327ecf7a72e2754de93bdae2b91c72.setContent(html_272d1694f53aa4040de2bca57665a73e);
+            
+        
+
+        marker_3303bc8264efdfdc914a046e2e0b21ad.bindPopup(popup_27327ecf7a72e2754de93bdae2b91c72)
+        ;
+
+        
+    
+    
+            marker_3303bc8264efdfdc914a046e2e0b21ad.bindTooltip(
+                `<div>
+                     Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9f8ffce21ae48e059ca7fc918146ecc9 = L.marker(
+                [43.0274308501459, -112.436058799833],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_079578835bb266894eb7cc775b7c1ff6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9f8ffce21ae48e059ca7fc918146ecc9.setIcon(icon_079578835bb266894eb7cc775b7c1ff6);
+        
+    
+        var popup_e2506e283fe3ea486ef255e95ef7bb2b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8be114cddc45d394448d1875d6f428e0 = $(`<div id="html_8be114cddc45d394448d1875d6f428e0" style="width: 100.0%; height: 100.0%;">                 <b>Shoshone-Bannock Tribes of the Fort Hall Reservation</b><br>                 Region: Northwest<br>                 Leader: Lee Tyler<br>                 Title: Chairman<br>                 Phone: (208) 478-3700<br>                 Email: ltyler@sbtribes.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_e2506e283fe3ea486ef255e95ef7bb2b.setContent(html_8be114cddc45d394448d1875d6f428e0);
+            
+        
+
+        marker_9f8ffce21ae48e059ca7fc918146ecc9.bindPopup(popup_e2506e283fe3ea486ef255e95ef7bb2b)
+        ;
+
+        
+    
+    
+            marker_9f8ffce21ae48e059ca7fc918146ecc9.bindTooltip(
+                `<div>
+                     Shoshone-Bannock Tribes of the Fort Hall Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bc2387aec315d30c4e0a533933212fa = L.marker(
+                [47.3221601000344, -123.145635200196],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_5100f440fb9f31901b1dd712a63bd59e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9bc2387aec315d30c4e0a533933212fa.setIcon(icon_5100f440fb9f31901b1dd712a63bd59e);
+        
+    
+        var popup_7bf656b2199b900088ef76e7281512e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_211dfa072ca220be6da348fd9070d304 = $(`<div id="html_211dfa072ca220be6da348fd9070d304" style="width: 100.0%; height: 100.0%;">                 <b>Skokomish Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Charles Miller<br>                 Title: Chairman<br>                 Phone: (360) 426-4232<br>                 Email: gmiller@skokomish.org<br>                 Type: PNW Region             </div>`)[0];
+                popup_7bf656b2199b900088ef76e7281512e8.setContent(html_211dfa072ca220be6da348fd9070d304);
+            
+        
+
+        marker_9bc2387aec315d30c4e0a533933212fa.bindPopup(popup_7bf656b2199b900088ef76e7281512e8)
+        ;
+
+        
+    
+    
+            marker_9bc2387aec315d30c4e0a533933212fa.bindTooltip(
+                `<div>
+                     Skokomish Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_146e675042d569c711d38ef132db6082 = L.marker(
+                [47.5139078898506, -121.825804400099],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_a4ff626e8c9586f62866b529db143c78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_146e675042d569c711d38ef132db6082.setIcon(icon_a4ff626e8c9586f62866b529db143c78);
+        
+    
+        var popup_fa9e878758ce105e0e187c354b7b51ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e7350c6c8463d671281c3ce71153a45 = $(`<div id="html_8e7350c6c8463d671281c3ce71153a45" style="width: 100.0%; height: 100.0%;">                 <b>Snoqualmie Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Robert de los Angeles<br>                 Title: Chairman<br>                 Phone: (425) 888-6551<br>                 Email: bobde@snoqualmietribe.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_fa9e878758ce105e0e187c354b7b51ad.setContent(html_8e7350c6c8463d671281c3ce71153a45);
+            
+        
+
+        marker_146e675042d569c711d38ef132db6082.bindPopup(popup_fa9e878758ce105e0e187c354b7b51ad)
+        ;
+
+        
+    
+    
+            marker_146e675042d569c711d38ef132db6082.bindTooltip(
+                `<div>
+                     Snoqualmie Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_784b5f7ee0f4e4a749f137eb274016ee = L.marker(
+                [47.8870028500593, -117.990182400238],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_0b8701db4725c4975b25c487077d5cde = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_784b5f7ee0f4e4a749f137eb274016ee.setIcon(icon_0b8701db4725c4975b25c487077d5cde);
+        
+    
+        var popup_b589f883b833ef31ae8cad61e834a5aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_189f82978f82cae7e314c87e130dc5c7 = $(`<div id="html_189f82978f82cae7e314c87e130dc5c7" style="width: 100.0%; height: 100.0%;">                 <b>Spokane Tribe of the Spokane Reservation</b><br>                 Region: Northwest<br>                 Leader: Greg Abrahamson<br>                 Title: Chairman<br>                 Phone: (509) 458-6500<br>                 Email: grega@spokanetribe.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_b589f883b833ef31ae8cad61e834a5aa.setContent(html_189f82978f82cae7e314c87e130dc5c7);
+            
+        
+
+        marker_784b5f7ee0f4e4a749f137eb274016ee.bindPopup(popup_b589f883b833ef31ae8cad61e834a5aa)
+        ;
+
+        
+    
+    
+            marker_784b5f7ee0f4e4a749f137eb274016ee.bindTooltip(
+                `<div>
+                     Spokane Tribe of the Spokane Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e7d630b862dfa6683ac95233395d2989 = L.marker(
+                [47.1218183701217, -123.080100699921],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_6ebdb56b0b6406192b3927cb39811472 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e7d630b862dfa6683ac95233395d2989.setIcon(icon_6ebdb56b0b6406192b3927cb39811472);
+        
+    
+        var popup_3bfe3bab03b498b3de2883f6a7cab096 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d1d88e433d005015f707766e61bb91db = $(`<div id="html_d1d88e433d005015f707766e61bb91db" style="width: 100.0%; height: 100.0%;">                 <b>Squaxin Island Tribe of the Squaxin Island Reservation</b><br>                 Region: Northwest<br>                 Leader: Kristopher Peters<br>                 Title: Chairman<br>                 Phone: (360) 426-9781<br>                 Email: kpeters@squaxin.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_3bfe3bab03b498b3de2883f6a7cab096.setContent(html_d1d88e433d005015f707766e61bb91db);
+            
+        
+
+        marker_e7d630b862dfa6683ac95233395d2989.bindPopup(popup_3bfe3bab03b498b3de2883f6a7cab096)
+        ;
+
+        
+    
+    
+            marker_e7d630b862dfa6683ac95233395d2989.bindTooltip(
+                `<div>
+                     Squaxin Island Tribe of the Squaxin Island Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e9fc64c646f350517a7df9f875f75cbf = L.marker(
+                [48.2095261898108, -122.18397509973],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_d040dbd6bd375fdbd91ded215412a19e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e9fc64c646f350517a7df9f875f75cbf.setIcon(icon_d040dbd6bd375fdbd91ded215412a19e);
+        
+    
+        var popup_fb31c73f005c7cab72635dd2a8d04215 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e9d6a3ac2fba66b1c00449fffeac868e = $(`<div id="html_e9d6a3ac2fba66b1c00449fffeac868e" style="width: 100.0%; height: 100.0%;">                 <b>Stillaguamish Tribe of Indians of Washington</b><br>                 Region: Northwest<br>                 Leader: Eric White<br>                 Title: Chairman<br>                 Phone: (360) 652-7362<br>                 Email: ewhite@stillaguamish.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_fb31c73f005c7cab72635dd2a8d04215.setContent(html_e9d6a3ac2fba66b1c00449fffeac868e);
+            
+        
+
+        marker_e9fc64c646f350517a7df9f875f75cbf.bindPopup(popup_fb31c73f005c7cab72635dd2a8d04215)
+        ;
+
+        
+    
+    
+            marker_e9fc64c646f350517a7df9f875f75cbf.bindTooltip(
+                `<div>
+                     Stillaguamish Tribe of Indians of Washington
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6ce7a2a1ed0f207249ef2cec7d8b410 = L.marker(
+                [47.7286999401727, -122.558626199936],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_56fa8830d9e90cd69b2f7544e2da61c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c6ce7a2a1ed0f207249ef2cec7d8b410.setIcon(icon_56fa8830d9e90cd69b2f7544e2da61c1);
+        
+    
+        var popup_f146e86ed0848fb0c8051c583250ec0f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_45e20384f7e30dee68730f21f451c9f8 = $(`<div id="html_45e20384f7e30dee68730f21f451c9f8" style="width: 100.0%; height: 100.0%;">                 <b>Suquamish Indian Tribe of the Port Madison Reservation</b><br>                 Region: Northwest<br>                 Leader: Leonard Forsman<br>                 Title: Chairman<br>                 Phone: (360) 598-3311<br>                 Email: lforsman@suquamish.nsn.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_f146e86ed0848fb0c8051c583250ec0f.setContent(html_45e20384f7e30dee68730f21f451c9f8);
+            
+        
+
+        marker_c6ce7a2a1ed0f207249ef2cec7d8b410.bindPopup(popup_f146e86ed0848fb0c8051c583250ec0f)
+        ;
+
+        
+    
+    
+            marker_c6ce7a2a1ed0f207249ef2cec7d8b410.bindTooltip(
+                `<div>
+                     Suquamish Indian Tribe of the Port Madison Reservation
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_aa6944ae7929cb74f4c1e7859df327ea = L.marker(
+                [48.390010159795, -122.501505900025],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_59ba58569bd3acfd64fa664ca42fa4dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aa6944ae7929cb74f4c1e7859df327ea.setIcon(icon_59ba58569bd3acfd64fa664ca42fa4dd);
+        
+    
+        var popup_a086de1dd69ea02e68cf2fd273abddc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4236e4fc60109ffcb63239666a84a03a = $(`<div id="html_4236e4fc60109ffcb63239666a84a03a" style="width: 100.0%; height: 100.0%;">                 <b>Swinomish Indian Tribal Community</b><br>                 Region: Northwest<br>                 Leader: Steve Edwards<br>                 Title: Chairman<br>                 Phone: (360) 466-3163<br>                 Email: sedwards@swinomish.nsn.us<br>                 Type: PNW Region             </div>`)[0];
+                popup_a086de1dd69ea02e68cf2fd273abddc2.setContent(html_4236e4fc60109ffcb63239666a84a03a);
+            
+        
+
+        marker_aa6944ae7929cb74f4c1e7859df327ea.bindPopup(popup_a086de1dd69ea02e68cf2fd273abddc2)
+        ;
+
+        
+    
+    
+            marker_aa6944ae7929cb74f4c1e7859df327ea.bindTooltip(
+                `<div>
+                     Swinomish Indian Tribal Community
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8faff7f2385b3669cb36e22f08708f21 = L.marker(
+                [48.0546608999579, -122.2585421],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_c725bd0bb5fceac44ca58a36eefd99bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8faff7f2385b3669cb36e22f08708f21.setIcon(icon_c725bd0bb5fceac44ca58a36eefd99bf);
+        
+    
+        var popup_4751514776e04d9b13c0ae2b5995226e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e16c27732b552da7ccf51f3e539283b1 = $(`<div id="html_e16c27732b552da7ccf51f3e539283b1" style="width: 100.0%; height: 100.0%;">                 <b>Tulalip Tribes of Washington</b><br>                 Region: Northwest<br>                 Leader: Teri Gobin<br>                 Title: Chairwoman<br>                 Phone: (360) 716-4000<br>                 Email: trgobin@tulaliptribes-nsn.gov<br>                 Type: PNW Region             </div>`)[0];
+                popup_4751514776e04d9b13c0ae2b5995226e.setContent(html_e16c27732b552da7ccf51f3e539283b1);
+            
+        
+
+        marker_8faff7f2385b3669cb36e22f08708f21.bindPopup(popup_4751514776e04d9b13c0ae2b5995226e)
+        ;
+
+        
+    
+    
+            marker_8faff7f2385b3669cb36e22f08708f21.bindTooltip(
+                `<div>
+                     Tulalip Tribes of Washington
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e65132c8dbafdd31005fa5da2879b09e = L.marker(
+                [48.5391000002654, -122.185145999804],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_8106ce7edc4f0c2f8fd723225f055cd8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e65132c8dbafdd31005fa5da2879b09e.setIcon(icon_8106ce7edc4f0c2f8fd723225f055cd8);
+        
+    
+        var popup_e9885bb14c642ff6ccd3bcfc5f809cd0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cff9544db67e4ca61c448f84f573da8b = $(`<div id="html_cff9544db67e4ca61c448f84f573da8b" style="width: 100.0%; height: 100.0%;">                 <b>Upper Skagit Indian Tribe</b><br>                 Region: Northwest<br>                 Leader: Jennifer Washington<br>                 Title: Chairwoman<br>                 Phone: (360) 854-7090<br>                 Email: jenniferw@upperskagit.com<br>                 Type: PNW Region             </div>`)[0];
+                popup_e9885bb14c642ff6ccd3bcfc5f809cd0.setContent(html_cff9544db67e4ca61c448f84f573da8b);
+            
+        
+
+        marker_e65132c8dbafdd31005fa5da2879b09e.bindPopup(popup_e9885bb14c642ff6ccd3bcfc5f809cd0)
+        ;
+
+        
+    
+    
+            marker_e65132c8dbafdd31005fa5da2879b09e.bindTooltip(
+                `<div>
+                     Upper Skagit Indian Tribe
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d25b82d1c635e294f01e99141372fef = L.marker(
+                [46.0941274198342, -100.627704300251],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_7133e9b11e6a3f5382fe0847b73f41b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7d25b82d1c635e294f01e99141372fef.setIcon(icon_7133e9b11e6a3f5382fe0847b73f41b5);
+        
+    
+        var popup_4fa2106c5a441367d9e7e89a4fd3f793 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe57d5299f5b1f6a2de22b2b65483e6c = $(`<div id="html_fe57d5299f5b1f6a2de22b2b65483e6c" style="width: 100.0%; height: 100.0%;">                 <b>Standing Rock Sioux Tribe of North & South Dakota</b><br>                 Region: Great Plains<br>                 Leader: Janet Alkire<br>                 Title: Chairperson<br>                 Phone: (701) 854-8500<br>                 Email: <br>                 Type: Custom Added             </div>`)[0];
+                popup_4fa2106c5a441367d9e7e89a4fd3f793.setContent(html_fe57d5299f5b1f6a2de22b2b65483e6c);
+            
+        
+
+        marker_7d25b82d1c635e294f01e99141372fef.bindPopup(popup_4fa2106c5a441367d9e7e89a4fd3f793)
+        ;
+
+        
+    
+    
+            marker_7d25b82d1c635e294f01e99141372fef.bindTooltip(
+                `<div>
+                     Standing Rock Sioux Tribe of North & South Dakota
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7fbed93705022af8c4e11b21f379c821 = L.marker(
+                [34.8936766003404, -98.3658874997446],
+                {}
+            ).addTo(map_231642562dfa3de93ad87e56101358e0);
+        
+    
+            var icon_62dc4ccdc0ad5123716329844e58dc14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7fbed93705022af8c4e11b21f379c821.setIcon(icon_62dc4ccdc0ad5123716329844e58dc14);
+        
+    
+        var popup_36768defab5c4b2bf12f619a9afa46a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12bd16006d112985912e7b1512304ace = $(`<div id="html_12bd16006d112985912e7b1512304ace" style="width: 100.0%; height: 100.0%;">                 <b>Fort Sill Apache Tribe of Oklahoma</b><br>                 Region: Southern Plains<br>                 Leader: Jennifer Heminokeky<br>                 Title: Chairwoman<br>                 Phone: (580) 588-2298<br>                 Email: jennifer.heminokeky@fortsillapache-nsn.gov<br>                 Type: Custom Added             </div>`)[0];
+                popup_36768defab5c4b2bf12f619a9afa46a9.setContent(html_12bd16006d112985912e7b1512304ace);
+            
+        
+
+        marker_7fbed93705022af8c4e11b21f379c821.bindPopup(popup_36768defab5c4b2bf12f619a9afa46a9)
+        ;
+
+        
+    
+    
+            marker_7fbed93705022af8c4e11b21f379c821.bindTooltip(
+                `<div>
+                     Fort Sill Apache Tribe of Oklahoma
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

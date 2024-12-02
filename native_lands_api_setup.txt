@@ -1,0 +1,188 @@
+
+# The primary goal of this project is to use the native land api to get information about native land territories, languages, and treaties 
+# occupied by healthcare organizations in the Portland, OR area.
+
+# The secondary goal of this project is to use the native land api to get information about native land territories, languages, and treaties 
+# for the specific tribes represented by the Native American/Alaska Native Employee Resource Group (NA ERG) to show geographic representation of our Native American/Alaska Native
+# employees. 
+
+# BIA/EPA Public API Resources:
+    # Other resources:
+    # BIA Geospatial Data
+    # https://www.bia.gov/bia/ots/dris/bogs
+
+    # Download options:
+    # {csv, Shapefile, GeoJSON, KML, fileGeodatabase, featureCollection, Excel, geoPackage}
+    # GeoJSON is likely the most useful.
+
+    # GeoService
+    # https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0/query?outFields=*&where=1%3D1
+
+    # GeoJSON 
+    # https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson
+
+    # ArcGIS ReST Services Directory for TribalLeadership_Directory
+    # https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer
+
+    # BIA Geospatial Hub
+    # https://opendata-1-bia-geospatial.hub.arcgis.com/
+    # - API Production URL: https://iiamabqz0max03p.ia.doi.net/api/
+    # - API Training URL: https://iiamabqz0max02l.ia.doi.net/api/
+    # - API Training Manual PDF URL: https://www.bia.gov/sites/default/files/dup/assets/bia/mwreg/pia/pdf/12-API.pdf
+
+    # EPA Geospatial Resources
+    # https://www.epa.gov/geospatial/guidance-using-tribal-boundaries-areas-and-names-resources
+
+# Native Land API Resources:
+
+    # https://native-land.ca/api/index.php?maps=languages&position=42.553080,-86.473389&key=your_api_key
+    # https://native-land.ca/api/index.php?maps=territories&position=42.553080,-86.473389&key=your_api_key
+    # https://native-land.ca/api/index.php?maps=treaties&position=42.553080,-86.473389&key=your_api_key
+    # https://native-land.ca/api/index.php?maps=languages,territories&position=42.553080,-86.473389&key=your_api_key
+
+    # Example of native land api setup with api key:
+    # https://native-land.ca/api/index.php?maps=languages&position=42.553080,-86.473389&key=your_api_key
+
+    #  Maps Categories
+    # maps_categories: {
+    #    "languages",
+    #    "territories",
+    #    "treaties"
+    #    }
+
+    #  Any combination of these can be requested. Languages may be the most applicable for current, understood tribe/band names.
+
+    # Position Request, Portland, OR example
+    # position_pdx: {
+    #    "lat": 45.515911011058265, 
+    #    "lng": -122.68977579814951
+    #    }
+
+    """
+    ### By Names and/or Position
+
+    Query a specific polygon or set of polygons by their slugs or a user's position.
+
+    You can get a tighter query than a full GeoJSON, faster and more tuned to your needs.
+
+    All of these requests are GET requests.
+
+    **You must always include a maps parameter in your request. You can send more than one at once to get results across multiple categories.**
+
+    For example:
+
+    https://native-land.ca/api/index.php?maps=languages,territories&position=42.553080,-86.473389&key=your_api_key
+
+    This request will get you all languages and territories that overlap with the <lat>, <lng> that you sent.
+    By Position
+
+    To get by position, send a latitude and longitude as follows:
+
+    https://native-land.ca/api/index.php?maps=<category>&position=<lat>,<lng>&key=your_api_key
+
+    An example request might look like this:
+
+    https://native-land.ca/api/index.php?maps=languages&position=42.553080,-86.473389&key=your_api_key
+
+    Specific Territories / Languages / Treaties
+
+    To get a specific nation, you need to know the identifying slug we use for that nation.
+
+    Look up the slug on Native-Land.ca, in the API section of your account after you log in. Just do a search for the nation you are interested in, and you will see all the available slugs you can use.
+
+    You can get more than one result at once, across multiple categories. Mix and match how you like!
+
+    An example query might look like this:
+
+    https://native-land.ca/api/index.php?maps=languages&name=nakota,lakota&key=your_api_key
+
+    You can also combine this with a position request, if you like.
+    """
+
+    ### By Intersecting Polygon
+
+    Learn how to get results from intersecting polygons.
+
+    For this request, you must send a POST request. It is formatted as follows (as an example Javascript fetch request):
+    // Will need to convert Javascript to Python
+
+    const requestBody = {
+        key : "your_api_key",
+        maps : "<category>",
+        polygon_geojson : featureCollection
+    };
+
+    fetch("https://native-land.ca/api/index.php", {
+        method : "POST",
+        body : JSON.stringify(requestBody)
+    })
+
+    // Python version
+
+    import requests
+
+    requestBody = {
+        "key" : "your_api_key",
+        "maps" : "<category>",
+        "polygon_geojson" : featureCollection
+    };
+
+    response = requests.post("https://native-land.ca/api/index.php", json=requestBody)
+
+    The requestBody that you send must have all three parameters to function. maps must be a comma-separated string of territories, languages, and/or treaties.
+
+    An example polygon_geojson would be:
+
+    {
+    “type”: “FeatureCollection”,
+    “features”: [
+        {
+        “type”: “Feature”,
+        “properties”: {},
+        “geometry”: {
+            “type”: “Polygon”,
+            “coordinates”: [
+            [
+                [
+                -105.556640625,
+                58.17070248348609
+                ],
+                [
+                -107.09472656249999,
+                57.11238500793404
+                ],
+                [
+                -104.853515625,
+                56.145549500679074
+                ],
+                [
+                -98.6572265625,
+                56.70450561416937
+                ],
+                [
+                -97.55859375,
+                57.89149735271034
+                ],
+                [
+                -99.8876953125,
+                58.49369382056807
+                ],
+                [
+                -103.7548828125,
+                58.768200159239576
+                ],
+                [
+                -105.556640625,
+                58.17070248348609
+                ]
+            ]
+            ]
+        }
+        }
+    ]
+    }
+
+    Please avoid sending extremely details or complex polygons, as this slows down the response and puts an extra load on the server.
+
+    We are using PostgreSQL with PostGIS to speed up your spatial queries.
+    """
