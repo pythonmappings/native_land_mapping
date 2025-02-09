@@ -2,8 +2,7 @@ import duckdb
 import json
 import pandas as pd
 import requests
-from typing import List, Dict, Any, Optional
-from pathlib import Path
+from typing import Dict, Any, Optional
 
 class NativeLandsDatabase:
     def __init__(self, db_path: str = "native_lands.duckdb"):
@@ -132,7 +131,8 @@ class NativeLandsDatabase:
         
         df = pd.DataFrame(records)
         self.conn.execute("DELETE FROM bia_tribes")  # Clear existing data
-        self.conn.execute("INSERT INTO bia_tribes SELECT * FROM df")
+        self.conn.register('df_table', df)  # Register the DataFrame
+        self.conn.execute("INSERT INTO bia_tribes SELECT * FROM df_table")
     
     def query_native_land_api(self, lat: float, lon: float) -> Dict[str, Any]:
         """Query the Native-Land.ca API for a specific location."""
